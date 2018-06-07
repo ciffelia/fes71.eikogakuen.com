@@ -1,0 +1,36 @@
+@import "../../node_modules/modern-normalize/modern-normalize.css";
+@import "NotoSansJapanese.css";
+@import "Colors";
+
+html {
+  line-height: 1.5;
+}
+
+html, #___gatsby {
+  height: 100%;
+}
+
+body {
+  height: calc(100% - 80px);
+
+  color: $textColor;
+  background-color: $backgroundColor;
+
+  font-family: "Noto Sans Japanese", sans-serif;
+  text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  letter-spacing: 0.05em;
+  font-feature-settings: "palt";
+
+  overflow-x: hidden;
+
+  ::selection {
+    background-color: $wasurenagusa;
+  }
+
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
+}

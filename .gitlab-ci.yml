@@ -1,0 +1,11 @@
+image: node:8
+
+build:
+  script:
+    - yarn
+    - yarn build
+
+test:
+  script:
+    - yarn
+    - yarn test

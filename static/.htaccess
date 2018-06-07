@@ -1,0 +1,21 @@
+SetEnvIf REDIRECT_HTTPS (.*) HTTPS=$1
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  RewriteCond %{ENV:HTTPS} !on
+  RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+Header set Cache-Control "public, max-age=0, must-revalidate"
+
+<FilesMatch "^(favicon|logo).png$">
+  Header set Cache-Control "public, max-age=2592000"
+</FilesMatch>
+
+Header set Content-Security-Policy "default-src https: data: blob: 'unsafe-inline'"
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Frame-Options "DENY"
+Header set X-Content-Type-Options "nosniff"

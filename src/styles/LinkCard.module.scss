@@ -1,0 +1,57 @@
+@import "Colors";
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  list-style: none;
+  padding: 0;
+
+  .wrapper {
+    margin: 30px;
+  }
+
+  .card {
+    $cardWidth: 250px;
+    $cardHeight: 300px;
+    $imageOrigWidth: 500px;
+    $imageOrigHeight : 280px;
+    $imageWidth : $cardWidth;
+    $imageHeight: $cardWidth * ($imageOrigHeight / $imageOrigWidth);
+
+    width: $cardWidth;
+    height: $cardHeight;
+    border-radius: 5px;
+
+    background: $backgroundColor no-repeat;
+    background-size: $imageWidth $imageHeight;
+
+    color: $textColor;
+
+    box-shadow: 0 0 8px gray;
+    transition: box-shadow 100ms ease-out;
+    &:hover {
+      box-shadow: 0 0 16px gray;
+    }
+
+    .contents {
+      padding-top: $imageHeight;
+
+      .title {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+
+        padding: 5px;
+
+        background-color: $textColor;
+        color: $backgroundColor;
+      }
+
+      .description {
+        margin: 4px 8px;
+      }
+    }
+  }
+}

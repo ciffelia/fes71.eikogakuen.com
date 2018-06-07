@@ -1,0 +1,119 @@
+@import "Colors";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: transparentize(black, .5);
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 150ms ease-in-out;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+
+    transition: all 150ms ease-in-out;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+
+  width: 90vw;
+  max-width: 760px;
+
+  padding: 15px;
+  border-radius: 5px;
+
+  box-shadow: 0 0 8px gray;
+  transition: box-shadow 100ms ease-out;
+  &:hover {
+    box-shadow: 0 0 16px gray;
+  }
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    font-size: 0.8em;
+  }
+
+  .imageWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .textWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    margin: 10px;
+    width: 100%;
+
+    .title {
+      display: inline-block;
+      text-align: center;
+
+      padding: 15px;
+      border-radius: 5px;
+
+      font-weight: bold;
+      font-size: 1.55em;
+
+      background-color: transparentize($backgroundColor, .5);
+    }
+
+    .description {
+      margin: 10px 0;
+
+      text-align: justify;
+      font-size: 1.1em;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .schedule {
+      margin-bottom: 10px;
+    }
+
+    .schedule, .catchPhrase {
+      padding: 10px;
+      border-radius: 5px;
+
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: bold;
+
+      color: $backgroundColor;
+      background-color: transparentize($textColor, .3);
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+
+        vertical-align: middle;
+      }
+    }
+  }
+}

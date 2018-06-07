@@ -1,0 +1,30 @@
+@import "Colors";
+
+.wrapper {
+  height: 100%;
+
+  &:not(.indexWrapper) {
+    .mainWrapper {
+      margin-bottom: 30px;
+    }
+  }
+
+  &.indexWrapper {
+    color: $sakura;
+    text-shadow: $wasurenagusa 0 0 6px;
+  }
+
+  .mainWrapper {
+    display: flex;
+    justify-content: center;
+
+    min-height: calc(100% - 180px);
+
+    margin-top: 80px;
+
+    & > main {
+      width: 90%;
+      max-width: 960px;
+    }
+  }
+}

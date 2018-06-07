@@ -1,0 +1,8 @@
+.access a {
+  color: #005CAF;
+
+  transition: color 300ms;
+  &:hover {
+    color: #0B346E;
+  }
+}

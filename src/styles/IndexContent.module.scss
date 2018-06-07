@@ -1,0 +1,60 @@
+@import "Colors";
+
+.wrapper {
+  &:not(:first-child) {
+    padding-top: 20px;
+  }
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+
+    color: $taikoh;
+    white-space: nowrap;
+  }
+
+  .description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width:767px) {
+    .title {
+      font-size: calc((100vw - 80px) * 0.08);
+      letter-spacing: 0.1em;
+    }
+  }
+
+  @media screen and (max-width:480px) {
+    .title {
+      font-size: 32px;
+    }
+    .description {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    display: flex;
+
+    .title {
+      width: 30%;
+      font-size: calc(90vw * 0.04);
+      letter-spacing: 0.1em;
+      padding-right: 30px;
+    }
+
+    .description {
+      width: 70%;
+      border-left: 2px solid $sakura;
+      padding-left: 30px;
+    }
+  }
+
+  @media screen and (min-width:1066px) {
+    .title {
+      font-size: calc(960px * 0.04);
+    }
+  }
+}

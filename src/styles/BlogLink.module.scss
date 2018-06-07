@@ -1,0 +1,56 @@
+@import "Colors";
+
+.blogLink {
+  display: inline-block;
+  position: relative;
+
+  font-size: calc((100vh - 80px) * 0.04);
+  letter-spacing: 0.1em;
+
+  padding: 15px 40px;
+
+  &:before, &:after, span:before, span:after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    background-color: $sakura;
+    box-shadow: #7DB9DE 0 0 6px 1px;
+    transition: width .3s ease,height .3s ease;
+  }
+
+  &:before, &:after {
+    width: 0;
+    height: 1px;
+  }
+  &:before {
+    top: -1px;
+    left: -1px;
+  }
+  &:after {
+    right: -1px;
+    bottom: -1px;
+  }
+
+  span:before, span:after {
+    width: 1px;
+    height: 0;
+  }
+  span:before {
+    left: -1px;
+    bottom: -1px;
+  }
+  span:after {
+    top: -1px;
+    right: -1px;
+  }
+
+  &:hover {
+    &:before, &:after {
+      width: calc(100% + 1px);
+    }
+    span:before, span:after {
+      height: calc(100% + 1px);
+    }
+  }
+}

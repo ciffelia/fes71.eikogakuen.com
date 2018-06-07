@@ -1,0 +1,6 @@
+@import "Colors";
+
+.underLine {
+  padding: 0 2px;
+  background: linear-gradient(transparent 70%, transparentize($mainColor, .2) 0);
+}

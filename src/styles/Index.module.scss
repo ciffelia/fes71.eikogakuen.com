@@ -1,0 +1,129 @@
+@import "Colors";
+
+.animationWrapper {
+  $bgHeight: calc(100vh - 80px);
+
+  width: 100%;
+  height: $bgHeight;
+
+  font-weight: bold;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  @keyframes fadeIn {
+    0% {
+      transform: translateY(80px) scale(2.0, 2.0);
+      opacity: 0;
+    }
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  .title1, .title2 > *, .blogLinkWrapper {
+    animation: fadeIn ease-in-out both;
+  }
+
+  .title2, .blogLinkWrapper, .scrollDownButtonWrapper {
+    margin-top: calc(#{$bgHeight} * 0.1);
+  }
+
+  .title1 {
+    font-size: calc(#{$bgHeight} * 0.05);
+    letter-spacing: 0.1em;
+    animation-duration: 1s;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  .title2 {
+    font-family: 'HGP行書体', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Noto Sans Japanese', serif;
+
+    font-size: 16.5vmin;
+    letter-spacing: 0.5vmin;
+
+    img {
+      height: 16.5vmin;
+      margin-right: 0.5vmin;
+    }
+
+    color: $taikoh;
+
+    white-space: nowrap;
+    &:before {
+      content: "";
+      margin-left: -100%;
+    }
+    &:after {
+      content: "";
+      margin-right: -100%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      div {
+        font-size: 36px;
+      }
+    }
+
+    margin-bottom: calc(#{$bgHeight} * -0.1);
+    padding-bottom: calc(#{$bgHeight} * 0.1);
+
+    & > * {
+      display:inline-block;
+      animation-duration: 200ms;
+
+      &:nth-child(1), &:nth-child(6) {
+        animation-delay: 1200ms;
+      }
+      &:nth-child(5) {
+        animation-delay: 1400ms;
+      }
+      &:nth-child(2) {
+        animation-delay: 1600ms;
+      }
+      &:nth-child(3) {
+        animation-delay: 1800ms;
+      }
+      &:nth-child(4) {
+        animation-delay: 2000ms;
+      }
+    }
+  }
+
+  .blogLinkWrapper {
+    animation-duration: 300ms;
+    animation-delay: 2850ms;
+  }
+}
+
+.transparentBg, .opaqueBg {
+  padding: 50px 0;
+}
+
+.opaqueBg {
+  position: relative;
+
+  &:before {
+    content: '';
+
+    position: absolute;
+
+    margin: -50px calc(-50vw + 50%);
+    width: 100vw;
+    height: 100%;
+
+    pointer-events: none;
+
+    background-color: transparentize($backgroundColor, .9);
+  }
+}
+
+.logoWrapper {
+  text-align: center;
+}

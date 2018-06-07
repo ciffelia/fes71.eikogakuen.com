@@ -1,0 +1,58 @@
+@import "Colors";
+
+.h1Wrapper {
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+
+  & > h1 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      display: inline-block;
+      width: 60px;
+      height: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $textColor;
+      border-radius: 2px;
+    }
+  }
+}
+
+.h2 {
+  position: relative;
+  padding: 0.5em;
+  background: #a6d3c8;
+  color: white;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px #959e9b;
+  }
+}
+
+.h3 {
+  $color: #6b9ae1;
+
+  color: $color;
+
+  padding-left: 30px;
+
+  background: url(../img/flower.svg) no-repeat;
+  background-position-y: center;
+  background-size: 24px 24px;
+
+  border-bottom: 3px dashed $color;
+}

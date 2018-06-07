@@ -1,0 +1,19 @@
+.button {
+  margin-top: 16px;
+  padding: 0.5em 1em;
+
+  text-align: center;
+  font-size: 1.3em;
+
+  color: #FFF;
+  background: #668ad8;
+
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+
+  &:active {
+    border-bottom: none;
+    margin-bottom: 4px;
+    transform: translateY(4px);
+  }
+}

@@ -1,0 +1,61 @@
+@import "Colors";
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  list-style: none;
+  padding: 0;
+
+  .wrapper {
+    margin: 30px;
+  }
+
+  .card {
+    width: 250px;
+    height: 300px;
+    border-radius: 5px;
+
+    position: relative;
+
+    background: no-repeat center center;
+    background-size: cover;
+
+    color: $textColor;
+
+    box-shadow: 0 0 8px gray;
+    transition: box-shadow 100ms ease-out;
+    &:hover {
+      box-shadow: 0 0 16px gray;
+    }
+
+    .contents {
+      position: absolute;
+      bottom: 0;
+
+      border-radius: 0 0 5px 5px;
+
+      width: 100%;
+
+      background-color: $backgroundColor;
+
+      .title {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+
+        padding: 5px;
+
+        background-color: $textColor;
+        color: $backgroundColor;
+      }
+
+      .description {
+        margin: 4px 8px;
+
+        text-align: center;
+      }
+    }
+  }
+}

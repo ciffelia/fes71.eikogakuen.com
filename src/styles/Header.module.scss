@@ -1,0 +1,230 @@
+@import "Colors";
+
+.header {
+  z-index: 10;
+
+  position: fixed;
+  top: 0;
+  
+  $headerHeight: 80px;
+
+  padding: 0 10px;
+  width: 100%;
+  height: $headerHeight;
+
+  font-weight: bold;
+
+  .smpNav {
+    $smpNavItems: 8;
+
+    list-style: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    margin: $headerHeight 0 0 0;
+    padding: 0;
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: all 300ms ease-in-out;
+    &:not(.smpNavActive) {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &.smpNavActive {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:not(.indexSmpNav) {
+      background-color: transparentize($textColor, .1);
+      a {
+        color: $sakura;
+        border-color: $sakura;
+      }
+    }
+
+    &.indexSmpNav {
+      background-color: transparentize(#222222, .3);
+      a {
+        color: $sakura;
+        border-color: $sakura;
+      }
+    }
+
+    @media screen and (min-width:768px) {
+      display: none;
+    }
+
+    a {
+      padding: 0 5px;
+      height: calc((100vh - #{$headerHeight}) / #{$smpNavItems});
+
+      font-size: calc((100vh - #{$headerHeight}) / 20);
+
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      border-width: 1px 0 0 0;
+      border-style: solid;
+    }
+  }
+
+  .navWrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    .smpNavToggleWrapper {
+      display: flex;
+      align-items: center;
+
+      .smpNavToggle {
+        position: relative;
+        width: 50px;
+        height: 44px;
+
+        &, & span {
+          display: inline-block;
+          transition: all .4s;
+          box-sizing: border-box;
+        }
+
+        span {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          border-radius: 4px;
+
+          &:nth-of-type(1) {
+            top: 0;
+          }
+          &:nth-of-type(2) {
+            top: 20px;
+          }
+          &:nth-of-type(3) {
+            bottom: 0;
+          }
+        }
+      }
+    }
+
+    .smpNavToggleDummy {
+      width: 50px;
+    }
+
+    .pcNav {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+
+      display: inline-flex;
+      justify-content: space-between;
+      list-style: none;
+
+      a {
+        padding: 0 8px;
+
+        display: flex;
+        align-items: center;
+
+        font-size: 18px;
+
+        margin-top: 5px;
+        border-bottom: 5px solid transparent;
+        transition: border-bottom-color 300ms ease-in-out;
+      }
+    }
+  }
+
+  @media screen and (max-width:819px) {
+    .navWrapper .pcNav {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width:820px) {
+    .smpNav, .navWrapper .smpNavToggleWrapper, .navWrapper .smpNavToggleDummy {
+      display: none;
+    }
+  }
+
+  &.headerSmpNavActive {
+    .smpNavToggle span {
+      &:nth-of-type(1) {
+        -webkit-transform: translateY(20px) rotate(-45deg);
+        transform: translateY(20px) rotate(-45deg);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        -webkit-transform: translateY(-20px) rotate(45deg);
+        transform: translateY(-20px) rotate(45deg);
+      }
+    }
+  }
+
+  transition: box-shadow 150ms ease-in-out 50ms;
+  &:not(.headerSmpNavActive):not(.indexHeader) {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .2);
+  }
+
+  &:not(.indexHeader) {
+    background: $headerGradient;
+
+    .navWrapper {
+      .smpNavToggle span {
+        background-color: $kurotobi;
+      }
+
+      .pcNav a {
+        color: $kurotobi;
+        &:hover {
+          border-bottom-color: $kurotobi;
+        }
+      }
+    }
+  }
+
+  &.indexHeader {
+    color: $sakura;
+    background-color: transparentize($indexBgColor, .5);
+
+    @keyframes fadeIn {
+      0% {
+        transform: translateY(-$headerHeight);
+        box-shadow: none;
+      }
+      100% {
+        transform: none;
+      }
+    }
+    animation: fadeIn 600ms ease-in-out 2850ms both;
+
+    .navWrapper {
+      .smpNavToggle span {
+        background-color: $sakura;
+        box-shadow: #7DB9DE 0 0 6px 1px;
+      }
+
+      .pcNav a {
+        color: $sakura;
+        text-shadow: $wasurenagusa 0 0 6px;
+        &:hover {
+          border-bottom-color: $sakura;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "Colors";
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  list-style: none;
+  padding: 0;
+
+  .wrapper {
+    margin: 30px;
+  }
+
+  .card {
+    width: 250px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 8px gray;
+    transition: box-shadow 100ms ease-out;
+    &:hover {
+      box-shadow: 0 0 16px gray;
+    }
+
+    .imageWrapper {
+      height: 230px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 200px;
+      }
+    }
+
+    .titleWrapper {
+      display: flex;
+      justify-content: center;
+
+      padding: 15px;
+      
+      font-weight: bold;
+      font-size: 25px;
+
+      background-color: transparentize($backgroundColor, .5);
+
+      div {
+        display: inline-block;
+        text-align: justify;
+      }
+    }
+  }
+}

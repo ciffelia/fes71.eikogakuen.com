@@ -1,0 +1,30 @@
+// http://nipponcolors.com/#sakura
+$sakura: #FEDFE1;
+
+// http://nipponcolors.com/#yamabuki
+$yamabuki: #FFB11B;
+
+// http://nipponcolors.com/#wasurenagusa
+$wasurenagusa: #7DB9DE;
+
+// http://nipponcolors.com/#kohrozen
+$kohrozen: #7D532C;
+
+// http://nipponcolors.com/#kurotobi
+$kurotobi: #554236;
+
+// http://nipponcolors.com/#karakurenai
+$karakurenai: #D0104C;
+
+// http://nipponcolors.com/#taikoh
+$taikoh: #F8C3CD;
+
+$mainColor: $yamabuki;
+$backgroundColor: #FFFBFB;
+$textColor: $kurotobi;
+
+$mainGradient: linear-gradient(to right, #f85032, #e73827);
+$headerGradient: linear-gradient(to right, #ff8008, #ffc837);
+$footerGradient: linear-gradient(to right, $kurotobi, $kohrozen);
+
+$indexBgColor: #222222;
